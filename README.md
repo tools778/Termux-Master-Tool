@@ -5,182 +5,59 @@
 ![Bash](https://img.shields.io/badge/Shell-Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)
 ![Termux](https://img.shields.io/badge/Platform-Termux-000000?style=for-the-badge&logo=android&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
-![Version](https://img.shields.io/badge/Version-1.0.0-brightgreen?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-2.0.0-brightgreen?style=for-the-badge)
 
-**A professional-grade Termux automation tool for GitHub.**  
-*Automate updates, repos, and package installs from a single interactive menu.*
+**A professional-grade Termux automation tool.**  
+*10 powerful tool categories — all from a single interactive menu.*
 
 </div>
 
 ---
 
-## 📋 Table of Contents
-
-- [Features](#-features)
-- [Requirements](#-requirements)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [Menu Options](#-menu-options)
-- [Essential 100 Packages](#-essential-100-packages)
-- [File Structure](#-file-structure)
-- [Screenshots](#-screenshots)
-- [Contributing](#-contributing)
-- [License](#-license)
-
----
-
 ## ✨ Features
 
-| Feature | Description |
-|---|---|
-| 🔄 **System Update** | One-click `pkg update && pkg upgrade` with cleanup |
-| 📦 **Repo Setup** | Auto-installs x11, root, science, and game repos |
-| 🛠️ **Essential 100** | Installs the 100 most-used Termux packages with progress bar |
-| 📊 **Package Counter** | Shows total available packages across all active repos |
-| 🌈 **Colorized UI** | ANSI color-coded output (green = success, red = error, yellow = warning) |
-| 🔌 **Internet Check** | Validates connectivity before any network operation |
-| ✅ **pkg Validation** | Ensures pkg is working before running any installation |
-| 📈 **Progress Bar** | Real-time progress bar during Essential 100 install |
-| 💬 **Interactive Menu** | Clean `case`-based menu, easy to navigate |
+| # | Menu Option | What it does |
+|---|---|---|
+| 1 | 🔄 System Update & Upgrade | `pkg update` + `pkg upgrade` + cache clean |
+| 2 | 📦 Setup External Repos | x11, root, science, game, tur-repo |
+| 3 | 🛠️ Essential 100 Packages | Top 100 packages with progress bar |
+| 4 | 📦 Package Manager | Install / remove / search / info / list |
+| 5 | 💻 System Info & Monitor | CPU / RAM / battery / storage / processes |
+| 6 | 🌐 Network Tools | IP / ping / DNS / nmap / download / SSH |
+| 7 | 🔧 Developer Tools | Git / SSH key / Python venv / Node.js / code-server |
+| 8 | 🗂️ File Manager Tools | Backup / clean / extract / find / permissions |
+| 9 | 🎨 Fun & Extras | neofetch / cmatrix / figlet / cowsay / cbonsai |
+| 10 | 📊 Count Packages | Total available + repo status |
 
 ---
 
 ## 📱 Requirements
 
-- **Android** device running **Termux** (F-Droid version recommended)
-- Active internet connection (Wi-Fi or mobile data)
-- Minimum **5–10 GB** free storage for full Essential 100 install
-- Battery level **≥ 30%** recommended (installation can take time)
-
-> ⚠️ **Note:** `root-repo` requires a rooted device. It will be skipped gracefully on non-rooted devices.
+- Termux (F-Droid version recommended)
+- Internet connection
+- 5–10 GB free storage
 
 ---
 
 ## 🚀 Installation
 
-### Method 1 — Clone from GitHub (Recommended)
-
 ```bash
-# 1. Install git if not already installed
 pkg install git -y
 
-# 2. Clone the repository
 git clone https://github.com/tools778/Termux-Master-Tool
 
-# 3. Navigate into the directory
 cd Termux-Master-Tool
 
-# 4. Make the script executable
 chmod +x master.sh
 
-# 5. Run it!
 ./master.sh
 ```
 
-### Method 2 — Direct Download
-
+**Or direct download:**
 ```bash
-# Download master.sh directly
 curl -fsSL https://raw.githubusercontent.com/tools778/Termux-Master-Tool/main/master.sh -o master.sh
-
-# Make executable and run
 chmod +x master.sh && ./master.sh
 ```
-
----
-
-## 🎮 Usage
-
-```bash
-./master.sh
-```
-
-The interactive menu will launch automatically. Use number keys `1–4` to select options, `0` to exit.
-
----
-
-## 📂 Menu Options
-
-### `[1]` 🔄 Update & Upgrade System
-Runs a full system refresh:
-```
-pkg update → pkg upgrade → pkg autoclean
-```
-Keeps all installed packages at their latest versions.
-
----
-
-### `[2]` 📦 Setup External Repositories
-Installs all 4 official Termux extra repos:
-
-| Repository | Contents |
-|---|---|
-| `x11-repo` | GUI/desktop apps, X11 display server tools |
-| `root-repo` | Root-only utilities (needs rooted device) |
-| `science-repo` | Scientific computing, math, and research tools |
-| `game-repo` | Terminal games and entertainment |
-
-After installation, package lists are automatically updated.
-
----
-
-### `[3]` 🛠️ Install Essential 100
-Installs **100 hand-picked, most-used Termux packages** across 11 categories:
-
-- 🔧 Core System Utilities
-- 🐚 Shell & Terminal Tools
-- 🌿 Version Control
-- 💻 Programming Languages (Python, Node.js, PHP, Ruby, Go, Rust, Java, Kotlin, C/C++...)
-- 🔨 Build & Dev Tools
-- 🌐 Networking Tools
-- 🗜️ File & Archive Tools
-- 🗄️ Databases
-- 🌍 Web & API Tools
-- 🔒 Security Tools
-- 🎨 Media & Productivity
-
-A real-time **progress bar** shows installation status for each package.
-
----
-
-### `[4]` 📊 Count Available Packages
-Displays:
-- Total available packages across all active repos
-- Currently installed package count
-- Number of upgradeable packages
-- Active/inactive status of each extra repository
-
----
-
-## 📦 Essential 100 Packages
-
-<details>
-<summary>Click to expand the full list</summary>
-
-```
-Core Utilities    : coreutils, busybox, util-linux, findutils, diffutils,
-                    grep, sed, gawk, less, pv
-Shell & Terminal  : bash, zsh, fish, tmux, screen, neovim, nano, micro,
-                    bat, htop
-Version Control   : git, git-lfs, gh
-Languages         : python, python-pip, nodejs, npm, ruby, php, perl,
-                    lua54, golang, rust, clang, openjdk-17, kotlin,
-                    elixir, erlang
-Build Tools       : make, cmake, ninja-build, autoconf, automake,
-                    pkg-config, binutils, gdb, lldb, strace
-Networking        : curl, wget, openssh, nmap, netcat-openbsd, socat,
-                    mtr, whois, iproute2, dnsutils, tcpdump, aria2,
-                    rsync, httpie, wireguard-tools
-File/Archive      : zip, unzip, p7zip, tar, gzip, xz-utils, tree
-Databases         : sqlite, mariadb, redis, postgresql, mongodb
-Web & API         : nginx, apache2, caddy, jq, yq
-Security          : openssl, gnupg, john, hydra, ncrack
-File Management   : fzf, ripgrep, fd-find, ranger, mc
-Media             : ffmpeg, imagemagick, mpv, exiftool, sox
-Productivity      : rclone, neofetch, lolcat, figlet, cmatrix
-```
-
-</details>
 
 ---
 
@@ -188,35 +65,21 @@ Productivity      : rclone, neofetch, lolcat, figlet, cmatrix
 
 ```
 Termux-Master-Tool/
-├── master.sh          # Main interactive script
-├── README.md          # This documentation
+├── master.sh          # Main script (all-in-one)
+├── README.md          # Documentation
 ├── LICENSE            # MIT License
-└── requirements.txt   # Package references (for GitHub standards)
+└── requirements.txt   # Runtime notes
 ```
-
----
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-1. Fork the repository
-2. Create your feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+MIT License — see [LICENSE](LICENSE)
 
 ---
 
 <div align="center">
-
-Made with ❤️ for the Termux community  
-⭐ **Star this repo** if it helped you!
-
+Made with ❤️ for the Termux community<br>
+⭐ <b>Star this repo</b> if it helped you!
 </div>
